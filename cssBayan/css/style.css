@@ -11,7 +11,8 @@ html {
 body {
     font-family: var(--bold);
     margin: 0;
-    height: 1500px
+    height: auto;
+    background-color: #f1f1f1;
 }
 
 .container {
@@ -20,6 +21,7 @@ body {
 }
 
 .bayan__title {
+    text-align: center;
     font-size: 3.5rem;
     margin: 0;
     margin-top: 3rem;
@@ -28,14 +30,27 @@ body {
 }
 
 .item-panel__label{
+    border-top: 0.4rem solid #fff;
+    border-left: 0.4rem solid #fff;
+    border-right: 0.4rem solid #fff;
+    border-radius: 1rem;
     width: 95%;
     margin: auto;
-    border-top: 0.2rem solid #f1f1f1;
-    border-radius: 0.2rem;
     padding: 2rem;
     font-size: 1.8rem;
     display: block;
-    cu
+    cursor: pointer;
+}
+
+.item-panel__label:last-child {
+    border-bottom: 0.4rem solid #fff;
+}
+
+.item-panel__text {
+    text-decoration: none;
+    color: #6e57a5;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
 .item-panel__input {
@@ -43,6 +58,9 @@ body {
 }
 
 .item__panel {
+    border: 0.3rem solid #fff;
+    border-radius: 1rem;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -51,36 +69,55 @@ body {
 
 .item-panel__icon {
     display: block;
+    opacity: 0;
     width: 2.5rem;
     height: 2.5rem;
 }
 
 .item-panel:has(input:checked) ~ .item-image .item-image__meme {
-    max-height: 40rem;
+    max-width: 70%;
+    max-height: 70%;
     opacity: 1;
+}
+
+.item-panel:has(input:checked) .item-panel__text {
+    color: #000;
 }
 
 .item-panel:has(input:checked) .item-panel__icon {
     transform: rotate(-45deg);
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .item-image__meme {
     display: block;
     padding: 2rem 0 2rem 0;
-    width: 70%;
+    max-width: 0;
     max-height: 0;
     margin: 0 auto;
     opacity: 0;
-    transition: max-height 1s cubic-bezier(0, 1, 0, 1), opacity 0.8s;
+    transition: max-width 0.8s cubic-bezier(0, 1, 0, 1), max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.8s ease-in;
 }
 
 .item-panel__label:hover .item-image__meme {
-    max-height: 40rem;
+    max-height: 70%;
+    max-width: 70%;
     opacity: 1;
 }
 
 .item-panel__label:hover .item-panel__icon {
     transform: rotate(-45deg);
     transition: 0.5s;
+}
+
+.bayan-block:hover .item-panel__icon {
+    opacity: 1;
+}
+
+.bayan-block:hover .item-panel__text {
+    color: #000;
+}
+
+.item-panel__label:active .item-panel__text{
+    color: #6e57a5;
 }

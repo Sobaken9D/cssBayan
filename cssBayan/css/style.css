@@ -11,12 +11,12 @@ html {
 body {
     font-family: var(--bold);
     margin: 0;
+    height: 1500px
 }
 
 .container {
     max-width: 800px;
     margin: auto;
-    border: 1px solid black;
 }
 
 .bayan__title {
@@ -27,12 +27,19 @@ body {
     font-weight: 600;
 }
 
-.bayan__item{
+.item-panel__label{
     width: 95%;
     margin: auto;
     border-top: 0.2rem solid #f1f1f1;
     border-radius: 0.2rem;
     padding: 2rem;
+    font-size: 1.8rem;
+    display: block;
+    cu
+}
+
+.item-panel__input {
+    display: none;
 }
 
 .item__panel {
@@ -42,27 +49,38 @@ body {
     align-items: center;
 }
 
-.item-panel__input {
-    display: none;
-}
-
-.item-panel__label {
-    font-size: 1.8rem;
-}
-
 .item-panel__icon {
+    display: block;
     width: 2.5rem;
     height: 2.5rem;
 }
 
-.item-image__meme {
-    padding: 10px;
-    display: none;
-    width: 70%;
-    height: 70%;
-    margin: 0 auto;
+.item-panel:has(input:checked) ~ .item-image .item-image__meme {
+    max-height: 40rem;
+    opacity: 1;
 }
 
-.bayan__item:hover .item-image__meme{
+.item-panel:has(input:checked) .item-panel__icon {
+    transform: rotate(-45deg);
+    transition: 0.5s;
+}
+
+.item-image__meme {
     display: block;
+    padding: 2rem 0 2rem 0;
+    width: 70%;
+    max-height: 0;
+    margin: 0 auto;
+    opacity: 0;
+    transition: max-height 1s cubic-bezier(0, 1, 0, 1), opacity 0.8s;
+}
+
+.item-panel__label:hover .item-image__meme {
+    max-height: 40rem;
+    opacity: 1;
+}
+
+.item-panel__label:hover .item-panel__icon {
+    transform: rotate(-45deg);
+    transition: 0.5s;
 }

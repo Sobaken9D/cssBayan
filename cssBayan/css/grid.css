@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 40vw;
+    margin: auto;
+}
+
+@media (max-width: 1920px) {
+    .container {
+        max-width: 40vw;
+    }
+}
+@media (max-width: 1180px) {
+    .container {
+        max-width: 60vw;
+    }
+}
+@media (max-width: 568px) {
+    .container {
+        max-width: 70vw;
+    }
+    html {
+        font-size: 0.4rem;
+    }
+}
+@media (max-width: 300px) {
+    .container {
+        max-width: 100vw;
+    }
+    html {
+        font-size: 3vw;
+    }
+}
+
+/* имеющиеся механизмы ввода данных позволяют с лёгкостью наводить указатель на элементы */
+@media (any-hover: hover) {
+    .item-panel__label:hover .item-image__meme {
+        max-height: 70%;
+        max-width: 70%;
+        opacity: 1;
+    }
+
+    .item-panel__label:hover .item-panel__icon {
+        transform: rotate(-45deg);
+        transition: 0.5s;
+    }
+
+    .bayan-block:hover .item-panel__icon {
+        opacity: 1;
+    }
+
+    .bayan-block:hover .item-panel__text {
+        color: #000;
+    }
+}
+/* имеется один или большее количество механизмов ввода данных, поддерживающих наведение указателя на элементы, но сделать это не особенно легко (например — для имитации наведения указателя на элемент используется длительное касание экрана) */
+@media (any-hover: on-demand) {
+    .item-panel__label:hover .item-image__meme {
+        max-height: 70%;
+        max-width: 70%;
+        opacity: 1;
+    }
+
+    .item-panel__label:hover .item-panel__icon {
+        transform: rotate(-45deg);
+        transition: 0.5s;
+    }
+
+    .bayan-block:hover .item-panel__icon {
+        opacity: 1;
+    }
+
+    .bayan-block:hover .item-panel__text {
+        color: #000;
+    }
+}
+/* имеющиеся механизмы ввода данных не обеспечивают функционал наведения указателя на элементы, или указывающих устройств не обнаружено */
+@media (any-hover: none) {
+    /* ... */
+}

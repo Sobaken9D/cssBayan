@@ -28,6 +28,7 @@
 @media (max-width: 300px) {
     .container {
         max-width: 100vw;
+        padding: 0 1rem;
     }
     html {
         font-size: 3vw;

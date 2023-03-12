@@ -1,0 +1,95 @@
+
+html {
+    font-size: 0.6rem;
+}
+
+body {
+    font-family: var(--bold);
+    margin: 0;
+    height: auto;
+    background-color: #222327;
+}
+
+
+.bayan__title {
+    color: #fff;
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 0;
+    margin-top: 3rem;
+    padding: 2rem 2rem  1.5rem 2rem;
+    font-weight: 600;
+}
+
+.item-panel__label{
+    background-color: #fff;
+    border-top: 0.4rem solid #222327;
+    border-left: 0.4rem solid #222327;
+    border-right: 0.4rem solid #222327;
+    border-radius: 1rem;
+    width: 95%;
+    margin: auto;
+    padding-top: 2rem;
+    font-size: 1.8rem;
+    display: block;
+    cursor: pointer;
+}
+
+.item-panel__text {
+    text-decoration: none;
+    color: #6e57a5;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-left: 2rem;
+}
+
+.item-panel__input {
+    display: none;
+}
+
+.item__panel {
+    border: 0.3rem solid #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-panel__icon {
+    display: block;
+    opacity: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.item-panel:has(input:checked) ~ .item-image .item-image__meme {
+    max-width: 70%;
+    max-height: 70%;
+    opacity: 1;
+}
+
+.item-panel:has(input:checked) .item-panel__text {
+    color: #000;
+}
+
+.item-panel:has(input:checked) .item-panel__icon {
+    transform: rotate(-45deg);
+    transition: 0.8s;
+}
+
+.item-image__meme {
+    display: block;
+    padding: 2rem 0 3rem 0;
+    max-width: 0;
+    max-height: 0;
+    margin: 0 auto;
+    opacity: 0;
+    transition: max-width 0.8s cubic-bezier(0, 1, 0, 1), max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.8s ease-in;
+}
+
+.item-panel__label:active .item-panel__text{
+    color: #6e57a5;
+}
+
